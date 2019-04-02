@@ -1,13 +1,19 @@
-client = new Paho.MQTT.Client("mqtt.sj.ifsc.edu.br", Number("443"), "clientId"); // Precisamos definir no IFSC qual é a página
+client = new Paho.MQTT.Client("mqtt.sj.ifsc.edu.br", Number("443"), "clientId");
 
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
-client.connect({ onSuccess: onConnect, useSSL: true });
+
+client.connect({
+  onSuccess: onConnect,
+  keepAliveInterval: 30,
+  //reconnect: true,
+  //reconnectInterval: 10,
+  useSSL: true
+});
 
 function onConnect() {
   console.log("onConnect");
   client.subscribe("arduino/remote_app");
-  
 }
 
 function onConnectionLost(responseObject) {
@@ -16,9 +22,12 @@ function onConnectionLost(responseObject) {
   }
 }
 
+function onMessageArrived(message) {
+  console.log("onMessageArrived:" + message.payloadString);
+};
+
 function sendMessage(valor) {
   topic = "arduino/remote_app";
-  //client.subscribe(topic);
   message = new Paho.MQTT.Message(valor);
   message.destinationName = topic;
   client.send(message);
