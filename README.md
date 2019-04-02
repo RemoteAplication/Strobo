@@ -42,4 +42,4 @@ Assim o Arduino vai receber todas as mensagens vindas no tópico inscrito e todo
 
 # Explicação do experimento
 
---> INSERIR A FIGURA GERAL DO ESQUEMA DO EXPERIMENTO. 
+![Visão do sistema](https://github.com/RemoteAplication/Strobo/blob/master/img/FAPESC%20-%20Vis%C3%A3o%20Geral%20-%20TCC%20pr%C3%A1tico.png)
