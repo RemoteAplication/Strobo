@@ -84,12 +84,12 @@ void setup() {
   Serial.println(Ethernet.localIP()); //exibe endereço ip obtido via dhcp
 
   mqtt.subscribe(&subcomandos); //inscreve no topico /porta/comandos
-    
-  
 
 
 
-  
+
+
+
 }
 
 //iniciar o arduino sempre com a porta fechada!!
@@ -109,7 +109,7 @@ void loop() {
 
   subscriber(); //rotina para verificar se chegou algum dado do tópico inscrito
   //Serial.println(distancia);
-  
+
   if (! commandlist.isEmpty()){  // se lista de comandos não estiver fazia, desenfileira comando e atribui a porta;
 
 
@@ -117,12 +117,12 @@ void loop() {
     Serial.print("Desenfileirou ");
     Serial.println(doorcomand[0]);
 
-  
+
   } else {
 
     doorcomand[0] = 0;
     Serial.println("Fila de comandos vazia!");
-    
+
   }
 
   if (*doorcomand[0] == '2' && doorstatus == 3){ //apenas abrirá se porta estiver fechada.
@@ -170,7 +170,7 @@ void portaAbrir() {
      delay(50);
      digitalWrite(6, HIGH);
     }
-    
+
     Serial.println("Porta abrindo");
     distancia = sonar1.ping_cm();
     Serial.println(distancia);
@@ -272,36 +272,34 @@ void subscriber() {
 
 bool verificarfid() {
 
- if ( ! mfrc522.PICC_IsNewCardPresent()) 
+ if ( ! mfrc522.PICC_IsNewCardPresent())
   {
     return false ;
   }
   // Select one of the cards
-  if ( ! mfrc522.PICC_ReadCardSerial()) 
+  if ( ! mfrc522.PICC_ReadCardSerial())
   {
     return false ;
   }
   String conteudo= "";
   byte letra;
-  for (byte i = 0; i < mfrc522.uid.size; i++) 
+  for (byte i = 0; i < mfrc522.uid.size; i++)
   {
      conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
      conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
-  
+
   conteudo.toUpperCase();
   if (conteudo.substring(1) == "3D 39 62 62") //UID 1 - Chaveiro
   {
     return true;
   }
-  
+
   if (conteudo.substring(1) == "10 9C 82 19") //UID 2 - Cartao
   {
     return true;
   }
 
   return false;
-  
-} 
 
-
+}
