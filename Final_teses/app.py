@@ -24,17 +24,9 @@ def FAQ():
 def Sugestoes():
     return render_template('Sugestoes.html')
 
-@application.route("/elements.html")
-def elements():
-    return render_template('elements.html')
-
 @application.route("/experimento_strobo.html")
 def experimento_strobo():
     return render_template('experimento_strobo.html')
-
-@application.route("/generic.html")
-def generic():
-    return render_template('generic.html')
 
 @application.route("/teoria.html")
 def teoria():
