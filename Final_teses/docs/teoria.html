@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+Industrious by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Aplicações educacionais</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="index.html">Educação</a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Experimento.html">Experimento</a></li>
+			<li><a href="FAQ.html">FAQ</a></li>
+			<li><a href="Sugestoes.html">Sugestões</a></li>
+		</ul>
+	</nav>
+
+	<!-- Heading -->
+	<div id="heading">
+		<h1>Experimento</h1>
+	</div>
+
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="content">
+				<h2>Experimento de controle de motor com estrutura transparente e lâmpada estroboscópica.</h2>
+		<div class="inner">
+		<div style="float: left; width: 45%">
+
+ 
+Existem atualmente em média 1 refrigerador doméstico para cada 4 habitantes na população mundial, que está em aproximadamente em 7.6 bilhões de pessoas (ONU), totalizando uma estimativa de 2 bilhões de compressores herméticos em operação atualmente no mundo. O consumo médio do regime diário destes refrigeradores, corresponde a dizer que aproximadamente 7% da energia elétrica produzida mundialmente é utilizados somente para operar os refrigeradores domésticos.
+Partindo-se dos números levantados anteriormente em escala mundial, considerando um tempo de vida para os refrigeradores da ordem de 10 anos, chega-se ao total de mais de 500 mil refrigeradores domésticos fabricados por dia no mundo, com o uso de 50 toneladas de fluido refrigerante por dia para carregar tais sistemas.
+O compressor apresentado nesse experimento compõe-se basicamente de um cilindro com válvulas de admissão e descarga automáticas do tipo palheta e um pistão que se move de forma cíclica dentro do dito cilindro promovendo assim a sucção, compressão e descarga de vapor a cada ciclo de seu movimento. O pistão é acoplado a um motor elétrico por um mecanismo do tipo biela- manivela que transforma o movimento giratório do motor elétrico de indução de eletricidade alternada da rede em movimento cíclico alternado de vai-e-vem para o pistão numa frequência levemente inferior à da alimentação pela rede, que é 60 Hz no Brasil (e 50Hz em alguns países).
+Este sistema de cilindro com válvulas, pistão, mecanismo biela manivela acoplado ao motor elétrico está encapsulado em uma carcaça hermética através da qual são passados a fiação elétrica e as tubulações de sucção e descarga do fluido refrigerante. Nesta carcaça existe óleo lubrificante coletado na parte inferior do compressor, denominada “carter”, de onde o óleo lubrificante é bombeado por canais de eixo virabrequim vertical do sistema motor-compressor (Virabrequim: cambota, ou veio de manivelas, ou virabrequim, ou eixo de manivelas ou árvore de manivelas).
+</div>
+		<div style="float: right; width: 45%">
+A grande utilização destes refrigeradores, tende a gerar necessidade de  manutenção. Para isso profissionais capacitados, através de por exemplo, cursos de refrigeração e climatização necessitam de ferramentas educacionais que demonstram o funcionamento dos fluidos hermeticamente vedados e facilitem o entendimento dos conceitos relacionados a manutenção de refrigeradores domésticos. Por estes motivos, o objetivo deste projeto é utilizar de protocolos e infraestruturas de software que possibilitem acesso através da internet, para implementar um experimento com interface intuitiva e de fácil manipulação.
+<h3>Infraestrutura do experimento</h3>
+
+Considerando o alcance global dos refrigeradores domésticos e a necessidade da disseminação dos conceitos relacionados a manutenção do fluido de refrigeração,  a forma mais eficiente de fornecer acesso ao experimento é através da internet, devido a grande utilização para os mais diversos fins. Para proporcionar acesso através da web, o experimento utiliza um software embarcado na placa arduino uno, que controla uma lâmpada estroboscópica, uma lâmpada comum, uma câmera de alta resolução e um motor de passo, os quais são atuadores em uma infraestrutura de software composta por um serviço de gerenciamento de dados que relaciona o serviço web, serviço de identificação, broker e interface de dados.
+Os comandos realizados através da página são direcionados para um mediador, também chamado de broker, que utiliza o protocolo MQTT, o qual funciona utilizando o método Publish/Subscribe. Os clientes, arduino e página web, se conectam ao Broker e assim podem se inscrever ou publicar em um tópico definido, desta forma o direcionamento de mensagens possibilita a utilização do experimento de forma remota. 
+<br>
+			</div>
+		<div style="clear: both"></div>
+
+			<video  width="1200" height="840" autoplay loop muted playsinline src="images/compressor.mp4"></video>
+			<video   width="1200" height="840" autoplay loop muted playsinline src="images/compressoroperando.mp4"></video>
+			<video   width="1200" height="840" autoplay loop muted playsinline src="images/circuitorefrigeracao.mp4"></video>
+				<dt></dt>
+				</dl>
+
+				<ul class="actions fit">
+					<li><a href="experimento_strobo.html" class="button primary fit small">Acesse o experimento</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="copyright">
+				&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a
+					href="https://coverr.co">Coverr</a>.
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+Industrious by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+  <title>Aplicações educacionais</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link rel="stylesheet" href="static/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+  <!-- Header -->
+  <header id="header">
+    <a class="logo" href="index.html">Educação</a>
+    <nav>
+      <a href="#menu">Menu</a>
+    </nav>
+  </header>
+
+  <!-- Nav -->
+  <nav id="menu">
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Experimento.html">Experimento</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="Sugestoes.html">Sugestões</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <section id="main" class="wrapper">
+    <script src="experimento_strobo.js"></script>
+    <div class="inner">
+      <div class="content">
+        <a href="#" onclick="sendMessage('1')" class="icon plus"><span class="label">Icon</span></a>
+        <a href="#" onclick="sendMessage('2')" class="icon minus"><span class="label">Icon</span></a>
+        <a href="#" onclick="sendMessage('3')" class="icon rotate-left"><span class="label">Icon</span></a>
+        <a href="#" onclick="sendMessage('4')" class="icon rotate-right"><span class="label">Icon</span></a>
+        <a href="#" onclick="sendMessage('5')" class="icon power-off"><span class="label">Icon</span></a>
+	
+	<span class="image center"><img src="images/bancada.jpeg" alt="" /></span>
+
+        <button id="message" class="icon plus" align="center" onclick="sendMessage('1')" value="1">Frequência Lâmpada Stroboscópica
+          ++</button>
+        <button id="message" class="icon minus" align="center" onclick="sendMessage('2')" value="2">Frequência Lâmpada Stroboscópica
+          --</button>
+	<button id="message" class="icon rotate-left" align="center" onclick="sendMessage('3')" value="3">Câmera - Rotação
+          Esquerda </button>
+        <button id="message" class="icon rotate-right" align="center" onclick="sendMessage('4')" value="4">Câmera - Rotação
+          Direita</button>
+        <button id="message" class="icon power-off" align="center" onclick="sendMessage('5')" value="5">Compressor -
+          Liga/Desliga</button>
+        <!--<button id="message" class="button small" align="center" onclick="sendMessage('6')" value="6">Retorna condições ideais</button>-->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <div class="copyright">
+        &copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a
+          href="https://coverr.co">Coverr</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/browser.min.js"></script>
+  <script src="static/js/breakpoints.min.js"></script>
+  <script src="static/js/util.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+
+</html>
