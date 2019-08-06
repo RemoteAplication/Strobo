@@ -39,6 +39,18 @@ def index():
 def home():
     return render_template('index.html')
 
+@application.route("/iot.html")
+def iot():
+    return render_template('iot.html')
+
+@application.route("/labremotos.html")
+def labremotos():
+    return render_template('labremotos.html')
+
+@application.route("/software.html")
+def software():
+    return render_template('software.html')
+
 @application.route("/Experimento.html")
 def Experimento():
     return render_template('Experimento.html')
