@@ -47,6 +47,10 @@ def iot():
 def labremotos():
     return render_template('labremotos.html')
 
+@application.route("/elements.html")
+def elements():
+    return render_template('elements.html')
+
 @application.route("/software.html")
 def software():
     return render_template('software.html')
