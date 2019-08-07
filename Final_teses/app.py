@@ -67,9 +67,9 @@ def FAQ():
 def Sugestoes():
     return render_template('Sugestoes.html')
 
-@application.route("/experimento_strobo.html")
-def experimento_strobo():
-    return render_template('experimento_strobo.html')
+## @application.route("/experimento_strobo.html")
+## def experimento_strobo():
+##    return render_template('experimento_strobo.html')
 
 @application.route("/teoria.html")
 def teoria():
@@ -179,17 +179,23 @@ def InsInstitute():
     else:
         return jsonify({'missing': missing}),400
 
-@application.route('/ListInstitute', methods=['GET'])
+## @application.route("")
+## def experimento_strobo():
+##    return 
+@application.route('/ListIntitute', methods=['GET'])
 @auth.login_required
 def ListInstitute():
     IT = []
     cursor = Institute.find({})
-
+    print("ListIntitute")
     for document in cursor:
+        
+        print(document["name"])
+        
         IT.append({'name': document["name"], 'initials': document["initials"], 'address': document["address"],'city': document["city"], 'state': document["state"], 'CEP': document["CEP"]})
     session['IT'] = IT
 
-    return jsonify(IT),200
+    return render_template('experimento_strobo.html', IT=IT)
 
 ### Board Operations ###
 
@@ -713,6 +719,20 @@ def InsertExperiment():
     else:
         return jsonify({'missing': missing}), 400
 
+@application.route('/experimento_strobo.html', methods=['GET'])
+@auth.login_required
+def ListExperimentname():
+    EX = []
+    cursor = Experiment.find({})
+
+    for document in cursor:
+        EX.append({'name': document["name"]})
+
+    session['EX'] = EX
+
+    return render_template('experimento_strobo.html', EX=EX)
+
+
 @application.route('/ListExperiment', methods=['GET'])
 @auth.login_required
 def ListExperiment():
@@ -724,7 +744,7 @@ def ListExperiment():
 
     session['EX'] = EX
 
-    return jsonify(EX),200
+    return render_template('experimento_strobo.html', EX=EX)
 
 ### Feature Operations ###
 
